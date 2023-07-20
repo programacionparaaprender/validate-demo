@@ -26,6 +26,8 @@ public class StudentOneBean implements Serializable {
 		private List<String> countryOptions;
 		private List<String> languageOptions;
 		private List<String> languageFavorites;
+		private int freePasses;
+		private int postalCode;
 		public StudentOneBean() {
 			// TODO Auto-generated constructor stub
 		}
@@ -122,6 +124,22 @@ public class StudentOneBean implements Serializable {
 
 		public void setEmail(String email) {
 			this.email = email;
+		}
+
+		public int getFreePasses() {
+			return freePasses;
+		}
+
+		public void setFreePasses(int freePasses) {
+			this.freePasses = freePasses;
+		}
+
+		public int getPostalCode() {
+			return postalCode;
+		}
+
+		public void setPostalCode(int postalCode) {
+			this.postalCode = postalCode;
 		}
 		
 		

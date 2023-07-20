@@ -14,11 +14,50 @@ xmlns:composite="http://xmlns.jcp.org/jsf/composite">
 	<h:form>
 		<h:messages styleClass="error" />
 		<br/><br/>
-		First name: <h:inputText id="firstname" value="#{studentOneBean.firstName}" a:placeholder="What's your firstname" label="first name" required="true" />
+		First name: <h:inputText 
+						id="firstname" 
+						value="#{studentOneBean.firstName}" 
+						a:placeholder="What's your firstname" 
+						label="first name" 
+						required="true"
+						requiredMessage="Your first name is mandatory" />
+		<h:message styleClass="error" for="firstname" />
 		<br/><br/>
-		Last name: <h:inputText id="lastname" value="#{studentOneBean.lastName}" a:placeholder="What's your lastname" label="last name" required="true" />
+		Last name: <h:inputText 
+						id="lastname" 
+						value="#{studentOneBean.lastName}" 
+						a:placeholder="What's your lastname" 
+						label="last name" 
+						required="true"
+						requiredMessage="Your last name is mandatory" />
+		<h:message styleClass="error" for="lastname" />
 		<br/><br/>
-		Last name: <h:inputText id="email" value="#{studentOneBean.email}" a:placeholder="What's your email" label="Email" required="true" />
+		Email: <h:inputText 
+						id="email" 
+						value="#{studentOneBean.email}" 
+						a:placeholder="What's your email" 
+						label="Email" 
+						required="true"
+						requiredMessage="Your email is mandatory" />
+		<h:message styleClass="error" for="email" />
+		<br/><br/>
+		Free Passes: <h:inputText 
+						value="#{studentOneBean.freePasses}"
+						a:placeholder="What's your free passes" 
+						label="Free Passes"
+						id="free_passes">
+						<f:validateLongRange minimum="0" maximum="10" />
+					 </h:inputText>
+		<h:message styleClass="error" for="free_passes" />
+		<br/><br/>
+		Postal code: <h:inputText 
+						value="#{studentOneBean.postalCode}"
+						a:placeholder="What's your postal code" 
+						label="Postal code"
+						id="postal_code">
+						<f:validateLength minimum="5" maximum="5" />
+					 </h:inputText>
+		<h:message styleClass="error" for="postal_code" />
 		<br/><br/>
 		<h:commandButton value="Submit" action="student_one_response" />
 	</h:form>
