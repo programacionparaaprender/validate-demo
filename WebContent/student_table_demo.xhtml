@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:a="http://xmlns.jcp.org/jsf/facelets"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+<h:head>
+	<title>Student Table Demo</title>
+</h:head>
+<h:body>
+	<h3>Student Table Demo</h3>
+	<h:dataTable var="tempStudent" value="#{studentDataUtilBean.students}" border="1">
+        <h:column>
+        	<f:facet name="header">First Name</f:facet>
+        	<h:outputText value="#{tempStudent.firstName}" />
+        </h:column>
+		<h:column>
+        	<f:facet name="header">Last Name</f:facet>
+        	<h:outputText value="#{tempStudent.lastName}" />
+        </h:column>
+     </h:dataTable>
+</h:body>
+</html>

@@ -1,10 +1,17 @@
 package com.programacionparaaprender.validatedemo;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
+
 //import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Named;
 import javax.annotation.PostConstruct;
@@ -14,7 +21,7 @@ import javax.enterprise.context.SessionScoped;
 @ManagedBean
 @Named
 @SessionScoped
-public class StudentOneBean implements Serializable {
+public class TourBean implements Serializable {
 	   /**
 		 * 
 		 */
@@ -29,12 +36,19 @@ public class StudentOneBean implements Serializable {
 		private int freePasses;
 		private int postalCode;
 		private String phoneNumber;
-		public StudentOneBean() {
+		private String courseCode;
+		private Map<String,String> tours;
+		private String tour;
+		public TourBean() {
 			// TODO Auto-generated constructor stub
 		}
 		
 		@PostConstruct
 	    public void init() {
+			tours = new HashMap<String, String>();
+			tours.put("City", "City");
+			tours.put("Country", "Country");
+			
 			phoneNumber = "";
 			firstName = "";
 			lastName = "";
@@ -63,6 +77,28 @@ public class StudentOneBean implements Serializable {
 			languageOptions.add("Javascript");
 			languageOptions.add("Typescript");
 	    }
+		
+		public String startTheTour() {
+			if(tour != null && tour.equalsIgnoreCase("City")) {
+				return "city_tour";
+			}else {
+				return "country_tour";
+			}
+		}
+		
+		
+		
+		public void validateTheCourseCode(FacesContext context, UIComponent component, Object value) throws ValidatorException{
+			if(value == null) {
+				return;
+			}
+			String data = value.toString();
+			//Course code must start with LUV ...
+			if(!data.startsWith("LUV")) {
+				FacesMessage message = new FacesMessage("Course code must start with LUV");
+				throw new ValidatorException(message);
+			}
+		}
 
 		public String getFirstName() {
 			return firstName;
@@ -150,6 +186,30 @@ public class StudentOneBean implements Serializable {
 
 		public void setPhoneNumber(String phoneNumber) {
 			this.phoneNumber = phoneNumber;
+		}
+
+		public String getCourseCode() {
+			return courseCode;
+		}
+
+		public void setCourseCode(String courseCode) {
+			this.courseCode = courseCode;
+		}
+
+		public Map<String,String> getTours() {
+			return tours;
+		}
+
+		public void setTours(HashMap<String,String> tours) {
+			this.tours = tours;
+		}
+
+		public String getTour() {
+			return tour;
+		}
+
+		public void setTour(String tour) {
+			this.tour = tour;
 		}
 		
 		

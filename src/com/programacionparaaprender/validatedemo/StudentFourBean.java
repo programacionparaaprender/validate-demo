@@ -1,6 +1,12 @@
 package com.programacionparaaprender.validatedemo;
 
+
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
+
 //import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import java.util.LinkedList;
@@ -14,7 +20,7 @@ import javax.enterprise.context.SessionScoped;
 @ManagedBean
 @Named
 @SessionScoped
-public class StudentOneBean implements Serializable {
+public class StudentFourBean implements Serializable {
 	   /**
 		 * 
 		 */
@@ -29,7 +35,9 @@ public class StudentOneBean implements Serializable {
 		private int freePasses;
 		private int postalCode;
 		private String phoneNumber;
-		public StudentOneBean() {
+		private String courseCode;
+		
+		public StudentFourBean() {
 			// TODO Auto-generated constructor stub
 		}
 		
@@ -63,6 +71,18 @@ public class StudentOneBean implements Serializable {
 			languageOptions.add("Javascript");
 			languageOptions.add("Typescript");
 	    }
+		
+		public void validateTheCourseCode(FacesContext context, UIComponent component, Object value) throws ValidatorException{
+			if(value == null) {
+				return;
+			}
+			String data = value.toString();
+			//Course code must start with LUV ...
+			if(!data.startsWith("LUV")) {
+				FacesMessage message = new FacesMessage("Course code must start with LUV");
+				throw new ValidatorException(message);
+			}
+		}
 
 		public String getFirstName() {
 			return firstName;
@@ -150,6 +170,14 @@ public class StudentOneBean implements Serializable {
 
 		public void setPhoneNumber(String phoneNumber) {
 			this.phoneNumber = phoneNumber;
+		}
+
+		public String getCourseCode() {
+			return courseCode;
+		}
+
+		public void setCourseCode(String courseCode) {
+			this.courseCode = courseCode;
 		}
 		
 		

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:a="http://xmlns.jcp.org/jsf/facelets"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+<h:head>
+	<title>Counter One Form - SessionScoped</title>
+</h:head>
+<h:body>
+	<h1>SessionScoped diferente valor en diferentes navegadores</h1>
+	Counter value: #{counterOneBean.value}
+	<br/><br/>
+	<h:form>
+		<h:commandButton value="incrementar" action="#{counterOneBean.increment()}" />
+	</h:form>
+</h:body>
+</html>
