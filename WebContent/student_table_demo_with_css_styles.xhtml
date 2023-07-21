@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en"
 xmlns="http://www.w3.org/1999/xhtml"
 xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -8,28 +10,7 @@ xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 xmlns:composite="http://xmlns.jcp.org/jsf/composite">
 <h:head>
 	<title>Student Table Demo</title>
-	<style>
-	.demo-table {
-			border-collapse: collapse;
-			border-botton: 1px solid gray;
-			font-family: Tahoma,Verdana,Segoe,sans-serif;
-		}
-		.demo-table-header {
-			border-bottom: 1px solid gray;
-			background: none repeat scroll 0 0 #66CCFF;
-			padding: 10px; 
-		}
-		.demo-table-odd-row {
-			border-top: 1px solid gray;
-			background:none repeat scroll 0 0 #FFFFFFF;
-			text-align: center;
-		}
-		.demo-table-even-row {
-			border-top: 1px solid gray;
-			background: none repeat scroll 0 0 #F9F9F9;
-			text-align: center;
-		}
-	</style>
+	<h:outputStylesheet library="css" name="table_demo.css" /> 
 </h:head>
 <h:body>
 	<h3>Student Table Demo</h3>

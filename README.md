@@ -7,10 +7,10 @@
 ### Repositorio de librerias java
 >- mvnrepository.com
 
-### actualización importante de realizar
+### actualizaciï¿½n importante de realizar
 >- https://stackoverflow.com/questions/38040947/the-type-managedbean-is-deprecated
 
-### Crear componentes por composición
+### Crear componentes por composiciï¿½n
 >- https://www.adictosaltrabajo.com/2010/04/20/jsf-2-facelets-templates-and-composite-components/
 
 
@@ -52,3 +52,6 @@ https://www.youtube.com/watch?v=wxhLn--rZ2o
 
 ### insertar datos en sql server con java
 >- https://learn.microsoft.com/es-es/sql/connect/jdbc/step-3-proof-of-concept-connecting-to-sql-using-java?view=sql-server-ver16
+
+### HttpServlet cannot be resolved to a type eclipse
+>- https://www.codejava.net/java-ee/servlet/solved-httpservlet-cannot-be-resolved-to-a-type
