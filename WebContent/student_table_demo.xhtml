@@ -8,10 +8,36 @@ xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 xmlns:composite="http://xmlns.jcp.org/jsf/composite">
 <h:head>
 	<title>Student Table Demo</title>
+	<style>
+		.demo-table {
+			border-collapse: collapse;
+			border-botton: 1px solid gray;
+			font-family: Tahoma,Verdana,Segoe,sans-serif;
+		}
+		.demo-table-header {
+			border-bottom: 1px solid gray;
+			background: none repeat scroll 0 0 #66CCFF;
+			padding: 10px; 
+		}
+		.demo-table-odd-row {
+			border-top: 1px solid gray;
+			background:none repeat scroll 0 0 #FFFFFFF;
+			text-align: center;
+		}
+		.demo-table-even-row {
+			border-top: 1px solid gray;
+			background: none repeat scroll 0 0 #F9F9F9;
+			text-align: center;
+		}
+	</style>
 </h:head>
 <h:body>
 	<h3>Student Table Demo</h3>
-	<h:dataTable var="tempStudent" value="#{studentDataUtilBean.students}" border="1">
+	<h:dataTable 
+		var="tempStudent" 
+		value="#{studentDataUtilBean.students}" 
+		border="1"
+		styleClass="demo-table">
         <h:column>
         	<f:facet name="header">First Name</f:facet>
         	<h:outputText value="#{tempStudent.firstName}" />
@@ -19,6 +45,10 @@ xmlns:composite="http://xmlns.jcp.org/jsf/composite">
 		<h:column>
         	<f:facet name="header">Last Name</f:facet>
         	<h:outputText value="#{tempStudent.lastName}" />
+        </h:column>
+        <h:column>
+        	<f:facet name="header">Email</f:facet>
+        	<h:outputText value="#{tempStudent.email}" />
         </h:column>
      </h:dataTable>
 </h:body>
